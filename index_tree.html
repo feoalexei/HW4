@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Christmas Tree by Function</title>
+</head>
+<body>
+    <script>
+
+        function drawTree(height, symbol) {
+            
+            var tree = '';
+      
+            for (var line = 0; line < height; line++) {
+                for (var space = 1; space < height - line; space++) {
+                    tree += ' ';     
+                }
+                for (var star = 1; star <= (line + 1); star++) {
+                    tree += symbol + ' ';
+                }
+                tree += '\n';
+            }
+           
+            if (symbol.length > 1) {
+                alert('Use only one symbol to build a tree');
+                return false;
+            } else return tree;
+        }
+
+        console.log(drawTree( 5, '#' ));
+
+    </script>
+</body>
+</html>
