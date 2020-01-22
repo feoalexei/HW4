@@ -7,19 +7,26 @@
 <body>
 	<script>	
 
-		function calcFunction(a = 2, b = 3, c) {
-			function getSum(a, b) {
-				return a + b;
-			}
-			function getNumber(c) {
-				return c;
-			}
-			
-			return getNumber(c) || getSum(a, b);
+		var a = +prompt('Enter the \"a\" parametr');
+		var b = +prompt('Enter the \"b\" parametr');
+		var thirdArg = +prompt('Enter the \"c\" parametr');
+		
+		function getThird() {
+			return thirdArg;
 		}
-	
-		var resultFunction = calcFunction(4, 5, 6);
-		console.log(resultFunction);
+
+		function f (a = 2, b = 3, c) {
+			function sum(a, b) {
+				return a + b;
+			}	
+			
+			if (typeof c === 'function') {
+				return getThird();
+			} else 
+				return sum(a, b);
+		}
+		
+		console.log(f(a, b, getThird)) ;
 
 	</script>
 </body>
