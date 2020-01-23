@@ -7,12 +7,12 @@
 <body>
 	<script>	
 
-		var a = +prompt('Enter the \"a\" parametr');
-		var b = +prompt('Enter the \"b\" parametr');
-		var thirdArg = +prompt('Enter the \"c\" parametr');
+		// var a = +prompt('Enter the \"a\" parametr');
+		// var b = +prompt('Enter the \"b\" parametr');
+		// var thirdArg = +prompt('Enter the \"c\" parametr');
 		
-		function getThird() {
-			return thirdArg;
+		function getThird(n) {
+			return n;
 		}
 
 		function f (a = 2, b = 3, c) {
@@ -20,13 +20,13 @@
 				return a + b;
 			}	
 			
-			if (typeof c === 'function') {
-				return c();
+			if (typeof getThird === 'function') {
+				return c;
 			} else 
 				return sum(a, b);
 		}
 		
-		console.log(f(a, b, getThird)) ;
+		console.log(f(4, 5, getThird(1))) ;
 
 	</script>
 </body>
